@@ -1,0 +1,201 @@
+html,
+body {
+    height: 100%;
+}
+
+a:focus,
+a:hover {
+    color: #23527c;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.w {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+@mixin after_before($con:"", $w:0, $h:0, $p:static, $l:0, $t:0, $b:#fff) {
+    content: $con;
+    width: $w;
+    height: $h;
+    position: $p;
+    left: $l;
+    top: $t;
+    background-color: $b;
+}
+
+@mixin font_style($f_s:12px, $l_h:12px, $color:#fff) {
+    font-size: $f_s;
+    line-height: $l_h;
+    color: $color;
+}
+
+$TOPColor: #141825;
+$falseElement:(content: "", position: absolute);
+@mixin header_bottom_line {
+    left: 50%;
+    bottom: 0;
+    margin-left: -15px;
+    width: 30px;
+    height: 3px;
+    background-color: #00cbff;
+}
+
+#header {
+    background-color: $TOPColor;
+    .navbar {
+        margin-bottom: 0;
+    }
+    .header_img {
+        padding: 10px;
+        img {
+            width: 110px;
+        }
+    }
+    .nav {
+        a {
+            color: #FFF;
+            position: relative;
+            &:focus {
+                background-color: #141825;
+            }
+            &:hover {
+                cursor: pointer;
+                background-color: $TOPColor;
+                &::after {
+                    content: map-get($falseElement, content);
+                    position: map-get($falseElement, position);
+                    @include header_bottom_line;
+                }
+            }
+        }
+        .active {
+            a::after {
+                content: map-get($falseElement, content);
+                position: map-get($falseElement, position);
+                @include header_bottom_line;
+            }
+        }
+    }
+}
+
+.homePage_foot {
+    background-color: #040d1e;
+    height: 190px;
+    .homePage_foot_content {
+        width: 1200px;
+        margin: 0 auto;
+        position: relative;
+        >div {
+            position: relative;
+            padding-left: 150px;
+            padding-top: 33px;
+            img {
+                position: absolute;
+                left: 0;
+                top: 70px;
+            }
+            span {
+                p {
+                    @include font_style($color: #646667);
+                }
+            }
+        }
+        >span {
+            margin-top: 35px;
+            display: block;
+            >img {
+                position: absolute;
+                right: 0;
+                top: 33px;
+            }
+            >p {
+                text-align: right;
+                @include font_style($color: #646667);
+                position: relative;
+                &::before {
+                    @include after_before($w: 458px, $h:1px, $p:absolute, $l:auto, $t:-9px, $b:#646567);
+                    right: 0;
+                }
+            }
+        }
+    }
+}
+
+//公共的 main_top
+.main_top {
+    position: relative;
+    height: 520px;
+    .main_top_content {
+        >div {
+            float: right;
+            margin-right: 50px;
+            >h2 {
+                color: #FFF;
+                font-style: oblique;
+                &:first-child {
+                    margin-top: 200px;
+                }
+            }
+        }
+    }
+}
+
+.describe_list {
+    display: flex;
+    background-color: #fff;
+    -webkit-display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px; 
+    li {
+        width: 30%;
+        height: 250px;
+        text-align: center;
+        img {
+            display: block;
+            margin: 50px auto;
+        }
+        p {
+            text-align: center;
+        }
+    }
+}
+.carServer_h3 {
+    margin: 100px;
+}
+.bcg{
+    background-color: #FAFAFA; 
+}
+.warp {
+    flex-wrap: wrap;
+}
+#header {
+    position: absolute;
+    z-index: 99;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.main_top {
+    background-color: #11243d; 
+    height: 520px;
+}
+.main_top_content{
+    font-size: 0; 
+    >span{
+        display: inline-block;
+        width: 50%;
+        color: #ffd800; 
+        >h1{
+            margin-top: 200px; 
+        }
+        img{
+            width: 490px; 
+        }
+    }
+}

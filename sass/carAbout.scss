@@ -1,0 +1,64 @@
+@mixin bgu($url: url('../images/case_one.png') no-repeat) {
+    background: $url;
+    -webkit-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    background-size: 100% 100%;
+}
+
+.main_top {
+    @include bgu($url: url('../images/aboutMe.png') no-repeat);
+}
+
+.main_top {
+    height: 440px;
+}
+
+.carAbout_top {
+    margin: 50px 0;
+}
+
+.carAbout {
+    .carAbout_left {
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0px;
+        background-color: #eaeaea;
+        padding: 50px;
+        h3 {
+            margin: 30px 0;
+        }
+    }
+    .carAbout_text {
+        position: relative;
+        background-color: #FFF;
+        padding: 40px;
+        padding-left: 310px;
+        p {
+            line-height: 30px;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+
+.carAbout_table {
+	border: 1px solid #d2d2d2;
+    margin: 100px 0;
+    tbody {
+        tr {
+            >td {
+                width: 30%;
+                text-align: center;
+                line-height: 35px;
+                border-right: 1px solid #d2d2d2;
+                &:last-child{
+                	border-right: 0; 
+                } 
+            }
+            &.carAbout_table_bg{
+            	background-color: #f1f1f1; 
+            }
+        }
+    }
+}

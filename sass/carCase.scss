@@ -1,0 +1,133 @@
+@mixin bgu($url:url("../images/case_one.png") no-repeat) {
+    background: $url;
+    -webkit-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    background-size: 100% 100%;
+}
+
+@mixin font_style($f_s:12px,
+$l_h:12px,
+$color:#fff) {
+    font-size: $f_s;
+    line-height: $l_h;
+    color: $color;
+}
+
+#header {
+    width: 100%;
+    position: absolute;
+    z-index: 99;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+/* .main_top{
+	 background-color: #11243d; 
+    height: 520px;
+} */
+
+.case_select {
+    background-color: #fafafa;
+}
+
+#case_car_ul {
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    >li {
+        width: 48%;
+        height: 300px;
+        margin-bottom: 45px;
+        h3 {
+            margin: 0;
+            a {
+                line-height: 300px;
+                display: block;
+                text-align: center;
+                color: #FFF;
+            }
+        }
+
+        &:first-child {
+            @include bgu;
+        }
+        &:nth-child(2) {
+            @include bgu($url: url("../images/case_two.png") no-repeat);
+        }
+        &:nth-child(3) {
+            @include bgu($url: url("../images/case_three.png") no-repeat);
+        }
+        &:nth-child(4) {
+            @include bgu($url: url("../images/case_four.png") no-repeat);
+        }
+        &:nth-child(5) {
+            @include bgu($url: url("../images/case_three.png") no-repeat);
+        }
+        &:nth-child(6) {
+            @include bgu($url: url("../images/case_four.png") no-repeat);
+        }
+    }
+}
+
+.nav-tabs {
+    border: 0;
+}
+
+.nav-tabs>li>a {
+    color: #666;
+    border: 0;
+}
+
+.nav-tabs>li {
+    margin: 0;
+}
+
+.nav-tabs>li>a:hover {
+    background-color: #fafafa;
+}
+
+.nav-tabs>li.active>a,
+.nav-tabs>li.active>a:focus,
+.nav-tabs>li.active>a:hover {
+    color: #00cbff;
+    border: 0;
+    background-color: #fafafa;
+}
+
+#case_select_Tab {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.case_select_content_text {
+    display: none;
+    h3 {
+        text-align: center;
+        margin: 30px 0;
+    }
+    .case_select_content_text_content {
+        >span {
+            display: block;
+            width: 100%;
+            padding: 20px 30px;
+            background-color: #FFF;
+            margin-bottom: 10px;
+            &:hover {
+                background-color: #13aceb;
+                p {
+                    @include font_style($color: #fff, $l_h:24px);
+                }
+                h5 {
+                    color: #FFF;
+                }
+            }
+            p {
+                text-indent: 2em;
+                @include font_style($color: #000, $l_h:24px);
+            }
+            h5 {
+                color: #000;
+            }
+        }
+    }
+}

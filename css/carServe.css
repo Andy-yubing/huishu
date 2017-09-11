@@ -1,0 +1,312 @@
+#header {
+  position: absolute;
+  z-index: 99;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5); }
+
+/* .main_top {
+    //@include bgu($url: url('../images/case-top.jpg') no-repeat);
+    background-color: #11243d; 
+    height: 520px;
+} */
+.car_Server {
+  background-color: #fafafa; }
+
+/* .main_top_content{
+    font-size: 0; 
+    >span{
+        display: inline-block;
+        width: 50%;
+        color: #ffd800; 
+        >h1{
+            margin-top: 200px; 
+        }
+        img{
+            width: 490px; 
+        }
+    }
+} */
+.carServer > ul,
+.carServer > div {
+  margin-bottom: 30px; }
+.carServer .carServer_user {
+  position: relative;
+  padding: 200px;
+  background-color: #fff; }
+  .carServer .carServer_user > img:first-child {
+    display: block;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-animation: carServer_user_rotate 6s linear infinite;
+    -moz-animation: carServer_user_rotate 6s linear infinite;
+    -o-animation: carServer_user_rotate 6s linear infinite;
+    animation: carServer_user_rotate 6s linear infinite;
+    margin: 0 auto; }
+@keyframes carServer_user_rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+  .carServer .carServer_user > img:nth-child(2) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -34px;
+    margin-left: -29px; }
+  .carServer .carServer_user > img.carServer_user_img {
+    margin-left: -21px; }
+  .carServer .carServer_user > span ul.carServer_user_left li {
+    text-align: right; }
+  .carServer .carServer_user > span ul li.flag_font {
+    font-size: 18px; }
+  .carServer .carServer_user > span ul li {
+    margin-bottom: 5px; }
+  .carServer .carServer_user > span:nth-child(3) p {
+    position: absolute;
+    top: 160px;
+    left: 579px;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  .carServer .carServer_user > span:nth-child(3) img {
+    position: absolute;
+    top: 114px;
+    left: 606px;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  .carServer .carServer_user > span:nth-child(3) ul {
+    position: absolute;
+    top: 139px;
+    left: 947px;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  .carServer .carServer_user > span:nth-child(4) p {
+    position: absolute;
+    top: 280px;
+    left: 790px;
+    -webkit-transform: rotate(57deg);
+    -moz-transform: rotate(57deg);
+    -ms-transform: rotate(57deg);
+    -o-transform: rotate(57deg);
+    transform: rotate(57deg); }
+  .carServer .carServer_user > span:nth-child(4) img {
+    position: absolute;
+    top: 288px;
+    left: 837px;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  .carServer .carServer_user > span:nth-child(4) ul {
+    position: absolute;
+    top: 353px;
+    left: 947px;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  .carServer .carServer_user > span:nth-child(5) p {
+    position: absolute;
+    top: 521px;
+    left: 820px;
+    -webkit-transform: rotate(109deg);
+    -moz-transform: rotate(109deg);
+    -ms-transform: rotate(109deg);
+    -o-transform: rotate(109deg);
+    transform: rotate(109deg); }
+  .carServer .carServer_user > span:nth-child(5) img {
+    position: absolute;
+    top: 530px;
+    left: 867px;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  .carServer .carServer_user > span:nth-child(5) ul {
+    position: absolute;
+    top: 609px;
+    left: 947px;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  .carServer .carServer_user > span:nth-child(6) p {
+    position: absolute;
+    top: 666px;
+    left: 576px;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  .carServer .carServer_user > span:nth-child(6) img {
+    position: absolute;
+    top: 675px;
+    left: 603px;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  .carServer .carServer_user > span:nth-child(6) ul {
+    position: absolute;
+    top: 663px;
+    left: 723px;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  .carServer .carServer_user > span:nth-child(7) p {
+    position: absolute;
+    top: 553px;
+    left: 311px;
+    -webkit-transform: rotate(60deg);
+    -moz-transform: rotate(60deg);
+    -ms-transform: rotate(60deg);
+    -o-transform: rotate(60deg);
+    transform: rotate(60deg); }
+  .carServer .carServer_user > span:nth-child(7) img {
+    position: absolute;
+    top: 575px;
+    left: 252px;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  .carServer .carServer_user > span:nth-child(7) ul {
+    position: absolute;
+    top: 624px;
+    left: 130px;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  .carServer .carServer_user > span:nth-child(8) p {
+    position: absolute;
+    top: 290px;
+    left: 350px;
+    -webkit-transform: rotate(-60deg);
+    -moz-transform: rotate(-60deg);
+    -ms-transform: rotate(-60deg);
+    -o-transform: rotate(-60deg);
+    transform: rotate(-60deg); }
+  .carServer .carServer_user > span:nth-child(8) img {
+    position: absolute;
+    top: 150px;
+    left: 290px;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  .carServer .carServer_user > span:nth-child(8) ul {
+    position: absolute;
+    top: 180px;
+    left: 235px;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg); }
+.carServer .carServer_360 {
+  padding: 80px;
+  text-align: center;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-animation: carServer_360_rotate 18s linear infinite;
+  -moz-animation: carServer_360_rotate 18s linear infinite;
+  -o-animation: carServer_360_rotate 18s linear infinite;
+  animation: carServer_360_rotate 18s linear infinite; }
+@keyframes carServer_360_rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+.carServer .carReport > .describe_list {
+  margin-bottom: 0; }
+  .carServer .carReport > .describe_list > li {
+    width: 30%;
+    text-align: center; }
+.carServer .carReport .carReport_btn {
+  display: block;
+  width: 100%;
+  height: 100px;
+  background-color: #f1f1f1;
+  padding: 10px 0;
+  text-align: center;
+  color: #666666;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 80px; }
+  .carServer .carReport .carReport_btn img {
+    width: 20px;
+    margin-left: 10px; }
+.carServer .carFlow li {
+  float: left;
+  margin-bottom: 50px; }
+  .carServer .carFlow li > span {
+    font-weight: 600;
+    font-size: 20px;
+    color: #d5d5d5; }
+  .carServer .carFlow li a {
+    margin: 0 30px;
+    font-size: 15px;
+    color: #666; }
+    .carServer .carFlow li a > i {
+      font-size: 30px;
+      color: #d5d5d5;
+      margin-right: 5px; }
+  .carServer .carFlow li.carFlow_f5 {
+    position: relative; }
+    .carServer .carFlow li.carFlow_f5 > span {
+      position: absolute;
+      right: 78px;
+      top: 55px; }
+  .carServer .carFlow li.carFlow_f6 {
+    margin-right: 95px; }
+  .carServer .carFlow li.carFlow_right {
+    float: right;
+    margin-bottom: 150px; }
+  .carServer .carFlow li.carFlow_active a {
+    color: #2fbffa; }
+    .carServer .carFlow li.carFlow_active a i {
+      color: #2FBFFA; }
+
+/*# sourceMappingURL=carServe.css.map */

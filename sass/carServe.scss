@@ -1,0 +1,275 @@
+@mixin bgu($url: url('../images/case_one.png') no-repeat) {
+    background: $url;
+    -webkit-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    background-size: 100% 100%;
+}
+
+#header {
+    position: absolute;
+    z-index: 99;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+/* .main_top {
+    //@include bgu($url: url('../images/case-top.jpg') no-repeat);
+    background-color: #11243d; 
+    height: 520px;
+} */
+
+.car_Server {
+    background-color: #fafafa;
+}
+/* .main_top_content{
+    font-size: 0; 
+    >span{
+        display: inline-block;
+        width: 50%;
+        color: #ffd800; 
+        >h1{
+            margin-top: 200px; 
+        }
+        img{
+            width: 490px; 
+        }
+    }
+} */
+@mixin p_r($p: absolute,
+$t:0,
+$l:0,
+$r:rotate(0deg)) {
+    position: $p;
+    top: $t;
+    left: $l;
+    -webkit-transform: $r;
+    -moz-transform: $r;
+    -ms-transform: $r;
+    -o-transform: $r;
+    transform: $r;
+}
+
+@mixin rotate($r:rotate(0deg)) {
+    -webkit-transform: $r;
+    -moz-transform: $r;
+    -ms-transform: $r;
+    -o-transform: $r;
+    transform: $r;
+}
+
+
+.carServer {
+    >ul,
+    >div {
+        margin-bottom: 30px;
+    }
+
+    .carServer_user {
+        position: relative;
+
+        padding: 200px;
+
+        background-color: #fff;
+        >img {
+            &:first-child {
+                display: block;
+                @include rotate;
+                -webkit-animation: carServer_user_rotate 6s linear infinite;
+                -moz-animation: carServer_user_rotate 6s linear infinite;
+                -o-animation: carServer_user_rotate 6s linear infinite;
+                animation: carServer_user_rotate 6s linear infinite;
+                margin: 0 auto;
+                @at-root {
+                    @keyframes carServer_user_rotate {
+                        0% {
+                            @include rotate;
+                        }
+                        100% {
+                            @include rotate($r: rotate(360deg));
+                        }
+                    }
+                }
+            }
+            &:nth-child(2) {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-top: -34px;
+                margin-left: -29px;
+            }
+            &.carServer_user_img {
+                margin-left: -21px;
+            }
+        }
+        >span {
+            ul {
+                &.carServer_user_left {
+                    li {
+                        text-align: right;
+                    }
+                }
+                li.flag_font {
+                    font-size: 18px;
+                }
+                li {
+                    margin-bottom: 5px;
+                }
+            }
+            &:nth-child(3) {
+                p {
+                    @include p_r($t: 160px, $l:579px);
+                }
+                img {
+                    @include p_r($t: 114px, $l:606px);
+                }
+                ul {
+                    @include p_r($t: 139px, $l:947px);
+                }
+            }
+            &:nth-child(4) {
+                p {
+                    @include p_r($t: 280px, $l:790px, $r:rotate(57deg));
+                }
+                img {
+                    @include p_r($t: 288px, $l:837px);
+                }
+                ul {
+                    @include p_r($t: 353px, $l:947px);
+                }
+            }
+            &:nth-child(5) {
+                p {
+                    @include p_r($t: 521px, $l:820px, $r:rotate(109deg));
+                }
+                img {
+                    @include p_r($t: 530px, $l:867px);
+                }
+                ul {
+                    @include p_r($t: 609px, $l:947px);
+                }
+            }
+            &:nth-child(6) {
+                p {
+                    @include p_r($t: 666px, $l:576px);
+                }
+                img {
+                    @include p_r($t: 675px, $l:603px);
+                }
+                ul {
+                    @include p_r($t: 663px, $l:723px);
+                }
+            }
+            &:nth-child(7) {
+                p {
+                    @include p_r($t: 553px, $l:311px, $r:rotate(60deg));
+                }
+                img {
+                    @include p_r($t: 575px, $l:252px);
+                }
+                ul {
+                    @include p_r($t: 624px, $l:130px);
+                }
+            }
+            &:nth-child(8) {
+                p {
+                    @include p_r($t: 290px, $l:350px, $r:rotate(-60deg));
+                }
+                img {
+                    @include p_r($t: 150px, $l:290px);
+                }
+                ul {
+                    @include p_r($t: 180px, $l:235px);
+                }
+            }
+        }
+    }
+    .carServer_360 {
+        padding: 80px;
+        text-align: center;
+        @include rotate;
+        -webkit-animation: carServer_360_rotate 18s linear infinite;
+        -moz-animation: carServer_360_rotate 18s linear infinite;
+        -o-animation: carServer_360_rotate 18s linear infinite;
+        animation: carServer_360_rotate 18s linear infinite;
+        @at-root {
+            @keyframes carServer_360_rotate {
+                0% {
+                    @include rotate;
+                }
+                100% {
+                    @include rotate($r: rotate(360deg));
+                }
+            }
+        }
+    }
+    
+    .carReport {
+        >.describe_list {
+            >li {
+                width: 30%;
+                text-align: center;
+            }
+            margin-bottom: 0;
+        }
+        .carReport_btn {
+            display: block;
+            width: 100%;
+            height: 100px;
+            background-color: #f1f1f1;
+            padding: 10px 0;
+            text-align: center;
+            color: #666666;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 80px;
+            img {
+                width: 20px;
+                margin-left: 10px;
+            }
+        }
+    }
+    .carFlow {
+        li {
+            >span {
+                font-weight: 600;
+                font-size: 20px;
+                color: #d5d5d5;
+            }
+            float: left;
+            margin-bottom: 50px; 
+            a {
+                >i {
+                    font-size: 30px;
+                    color: #d5d5d5; 
+                    margin-right: 5px; 
+                }
+                margin:0 30px; 
+                font-size: 15px; 
+                color: #666; 
+            }
+            &.carFlow_f5{
+                position: relative;
+                >span{
+                    position: absolute;
+                    right: 78px;
+                    top: 55px;   
+                }
+            }
+            &.carFlow_f6{
+                margin-right: 95px; 
+            }
+            &.carFlow_right{
+                float: right;
+                margin-bottom: 150px; 
+            }
+            &.carFlow_active{
+                a{
+                    color: #2fbffa;
+                    i{
+                        color: #2FBFFA; 
+                    } 
+                }
+            }
+        }
+    }
+}

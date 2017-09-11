@@ -1,0 +1,116 @@
+@mixin bgu($url: url('../images/case_one.png') no-repeat) {
+    background: $url;
+    -webkit-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    background-size: 100% 100%;
+}
+
+@mixin after_before($con:"",
+$w:0,
+$h:0,
+$p:static,
+$l:0,
+$t:0,
+$b:#fff) {
+    content: $con;
+    width: $w;
+    height: $h;
+    position: $p;
+    left: $l;
+    top: $t;
+    background-color: $b;
+}
+
+/* .main_top {
+   // @include bgu($url: url('../images/case-top.jpg') no-repeat);
+}
+ */
+.main_top_content{
+    position: relative;
+    height: 100%;
+    padding-top: 100px;  
+    h1,h2{
+        color: #ffd800; 
+    }
+    img{
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        margin-left: -430px;  
+        width: 860px;
+    }
+}
+.carAdvantage_list {
+    >li {
+        &:hover {
+            background-color: #2fbffa;
+            p {
+                color: #FFF;
+            }
+            img {
+                &:nth-child(2) {
+                    display: block;
+                }
+                &:nth-child(1) {
+                    display: none;
+                }
+            }
+        }
+        img {
+            &:nth-child(2) {
+                display: none;
+            }
+        }
+    }
+}
+
+.carAdvantage_text {
+    height: 200px;
+    background-color: #FFF;
+    display: flex;
+    -webkit-display: flex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    
+    >li {
+        width: 25%;
+        position: relative;
+        &::after {
+            @include after_before($w: 1px, $h:100px, $p:absolute, $l:auto, $t:50px, $b:#d2d2d2);
+            right: 0px;
+        } 
+        &.no_line {
+            &::after {
+                @include after_before($w: 0px, $h:100px, $p:absolute, $l:auto, $t:50px, $b:#d2d2d2);
+            }
+        }
+        a {
+            color: #333;
+            display: block;
+            text-align: center;
+            margin-bottom: 15px;
+            &:first-child {
+                margin-top: 80px;
+            }
+        }
+    }
+
+}
+#carAdvantage_text_two{
+	>li{
+		width: 50%; 
+	}
+}
+#carAdvantage_text_three{
+	margin-bottom: 120px; 
+	>li{
+		width: 33%; 
+		padding: 0 50px; 
+		a{
+			margin-top: 60px; 
+		}
+		p{
+			line-height: 28px; 
+		}
+	}
+}

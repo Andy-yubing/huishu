@@ -14,16 +14,6 @@
     top: $t;
 }
 
-#header {
-    position: static;
-    background-color: #000;
-}
-
-
-
-
-
-
 /* @media screen and (max-width: 300px) {
     body {
         background-color:lightblue;
@@ -36,7 +26,7 @@
         .slideBox {
             height: 580px;
             padding: 0;
-            background-color: #1c2436; 
+            background-color: #1c2436;
         }
     }
 }
@@ -47,14 +37,14 @@
     width: $width;
 }
 
-@mixin animation_keep{
-    -webkit-animation-fill-mode: forwards; 
-     -moz-animation-fill-mode: forwards; 
-     -o-animation-fill-mode: forwards; 
-     animation-fill-mode: forwards;  
+@mixin animation_keep {
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
 }
 
-@mixin animationArgument($name:name, $time:0.5s, $speed:linear, $infinite:1) {
+@mixin animationArgument($name:name, $time:0.5s, $speed:linear, $infinite:num) {
     -webkit-animation: $name $time $speed $infinite;
     -moz-animation: $name $time $speed $infinite;
     -o-animation: $name $time $speed $infinite;
@@ -85,7 +75,7 @@
     transform: $myRotate;
 }
 
-@mixin keyframes_translate($translate:translate(x,y)) {
+@mixin keyframes_translate($translate:translate(x, y)) {
     -webkit-transform: $translate;
     -moz-transform: $translate;
     -ms-transform: $translate;
@@ -105,7 +95,7 @@
         li {
             float: left;
             height: 6px;
-            width: 30px; 
+            width: 30px;
             background-color: #274f6a;
             margin-right: 20px;
             cursor: pointer;
@@ -143,55 +133,55 @@
                         vertical-align: middle;
                         img {
                             position: absolute;
-                             
-                             opacity: 0; 
+
+                            opacity: 0;
                             &:nth-child(1) {
-                                @include slideBox_one_content_img($left:120px,$top: 60px);
-                                @include keyframes_translate($translate:translate(0px,60px));
-                                @include animationArgument($name: homePageTurn);
+                                @include slideBox_one_content_img($left: 120px, $top: 60px);
+                                @include keyframes_translate($translate: translate(0px, 60px));
+                                @include animationArgument($name: homePageTurn,$infinite:1);
                                 @include animation_keep;
                                 @at-root {
                                     @keyframes homePageTurn {
                                         0% {
-                                            @include keyframes_translate($translate:translate(0px,60px));
-                                            opacity:  0;
+                                            @include keyframes_translate($translate: translate(0px, 60px));
+                                            opacity: 0;
                                         }
                                         100% {
-                                            @include keyframes_translate($translate:translate(0px,0px));
-                                            opacity: 1; 
+                                            @include keyframes_translate($translate: translate(0px, 0px));
+                                            opacity: 1;
                                         }
                                     }
                                 }
                             }
                             &:nth-child(2) {
                                 @include slideBox_one_content_img($top: 185px, $left:270px, $width:50px);
-                                @include keyframes_translate($translate:translate(0px,60px));
-                                @include animationArgument($name: homePage_two);
+                                @include keyframes_translate($translate: translate(0px, 60px));
+                                @include animationArgument($name: homePage_two,$infinite:1);
                                 @include animation_keep;
                                 @at-root {
                                     @keyframes homePage_two {
                                         0% {
-                                            @include keyframes_translate($translate:translate(0px,60px));
-                                            opacity:  0;
+                                            @include keyframes_translate($translate: translate(0px, 60px));
+                                            opacity: 0;
                                         }
                                         100% {
-                                            @include keyframes_translate($translate:translate(0px,0px));
-                                            opacity: 1; 
+                                            @include keyframes_translate($translate: translate(0px, 0px));
+                                            opacity: 1;
                                         }
                                     }
                                 }
                             }
                             &:nth-child(3) {
                                 @include slideBox_one_content_img($top: auto, $left:282px, $width:23px);
-                                @include animationArgument($name: homePage_three);
+                                @include animationArgument($name: homePage_three,$infinite:1);
                                 @include animation_keep;
                                 @at-root {
                                     @keyframes homePage_three {
                                         0% {
-                                            opacity:  0;
+                                            opacity: 0;
                                         }
                                         100% {
-                                            opacity: 1; 
+                                            opacity: 1;
                                         }
                                     }
                                 }
@@ -199,16 +189,17 @@
                             }
                         }
                         h1 {
-                            margin-top: 33%;
+                            margin-top: 30%;
                         }
-                        h1{
+                        h1 {
                             color: #FFF;
                             margin-left: 15%;
+                            font-weight: 400;
                         }
-                        h4{
-                            color: #f5f5f5; 
-                            margin-top: 30px; 
-                             margin-left: 15%;
+                        h4 {
+                            color: #f5f5f5;
+                            margin-top: 30px;
+                            margin-left: 15%;
                         }
                     }
                 }
@@ -219,7 +210,7 @@
 
 .seek {
     height: 160px;
-    background-color: #13445b;
+    background-color: #124b65;
     .seek_content {
         width: 1200px;
         margin: 0 auto;
@@ -288,6 +279,10 @@
     h1 {
         margin-top: 50px;
     }
+    >p {
+        color: #b0b0b0;
+        margin-bottom: 40px;
+    }
 }
 
 @mixin acrive_a($b:0, $b-c:#fff, $b-b:4px solid #38bdbe) {
@@ -299,6 +294,9 @@
 .homePage_product_content {
     width: 1200px;
     margin: 0 auto;
+    background-color: #FFF;
+    padding: 10px;
+    margin-bottom: 20px;
     .nav-tabs {
         border-bottom: 1px solid #38bdbe;
         >li {
@@ -328,6 +326,7 @@
             position: absolute;
             left: 0;
             top: 0;
+            width: 110px; 
         }
     }
     .product_text {
@@ -340,7 +339,7 @@
             padding-top: 20px;
         }
         p {
-            line-height: 30px;
+            line-height: 24px;
         }
     }
     .product_list {
@@ -349,7 +348,7 @@
             display: inline-block;
             width: 25%;
             padding: 10px 30px;
-            height: 240px;
+            height: 180px;
             vertical-align: middle;
             line-height: 20px;
             position: relative;
@@ -368,6 +367,7 @@
             }
             p {
                 font-size: 12px;
+                margin-top: 30px; 
             }
         }
     }
@@ -387,7 +387,8 @@
         font-size: 0;
         position: relative;
         &::after {
-            @include after_before($w: 1px, $h:830px, $p:absolute, $l:50%, $t:-40px, $b:#09536c);
+            @include after_before($w: 2px, $h:889px, $p:absolute, $l:50%, $t:-40px, $b:#09536c);
+            margin-left: -1px; 
         }
         &::before {
             @include after_before($w: 10px, $h:10px, $p:absolute, $l:50%, $t:-40px, $b:#00fffc);
@@ -406,93 +407,100 @@
             &:nth-child(3) {
                 margin-top: 30px;
             }
+            &:nth-child(3),
+            &:nth-child(4),
+            {
+                height: 420px;
+            }
         }
         .home_server_content_text {
             position: relative;
             >img {
                 position: absolute;
                 &:nth-child(1) {
-                    @include slideBox_one_content_img($top: 37px, $left:35px, $width:230px);
+                    @include slideBox_one_content_img($top: 80px, $left:35px, $width:230px);
                 }
                 &:nth-child(2) {
-                    @include slideBox_one_content_img($top: 83px, $left:79px, $width:140px);
+                    @include slideBox_one_content_img($top: 125px, $left:79px, $width:140px);
                 }
-                &.server_line {
+                /*  &.server_line {
                     @include slideBox_one_content_img($top: 161px, $left:224px, $width:auto);
-                }
-                /* &.homePage_server_pillar {
-                    @include slideBox_one_content_img($top: 100px, $left:35px, $width:240px);
-                    @include keyframes_rotateX; // @include animationArgument($name: homePage_circle_4);
-                    @at-root {
-                        @keyframes homePage_circle_4 {
-                            0% {
-                                @include keyframes_rotate;
-                            }
-                            100% {
-                                @include keyframes_rotate($myRotate: rotateX(360deg));
-                            }
-                        }
-                    }
                 } */
                 &.circlePillar {
-                    @include slideBox_one_content_img($top: 80px, $left:57px, $width:180px);
+                    @include slideBox_one_content_img($top: 71px, $left:62px, $width:230px);
                 }
                 &.circleBottom {
-                    @include slideBox_one_content_img($top: 120px, $left:35px, $width:230px);
-                    @include keyframes_rotate; //@include animationArgument($name: homePage_circle_4);
-                    @at-root {
-                        @keyframes homePage_circle_4 {
-                            0% {
-                                @include keyframes_rotate;
-                            }
-                            100% {
-                                @include keyframes_rotate($myRotate: rotate(360deg));
-                            }
-                        }
-                    }
+                    @include slideBox_one_content_img($top: 143px, $left:40px, $width:280px);
                 }
-
-
-                &.home_server_content_animation1 {
+                &.home_server_content_animation3{
+                    @include slideBox_one_content_img($top: 103px, $left:75px, $width:160px);
+                }
+                &.home_server_content_animation3_line{
+                    @include slideBox_one_content_img($top: 56px, $left:35px, $width:240px);
+                }
+                &.home_server_content_report{
+                    @include slideBox_one_content_img($top: 140px, $left:54px, $width:191px);
+                }
+            }
+            &:hover {
+                .home_server_content_animation1 {
                     @include keyframes_rotate;
-                    @include animationArgument($name: homePage_circle);
+                    @include animationArgument($name: homePage_circle, $time:7s,$infinite:infinite);
+                   // @include animation_keep;
                     @at-root {
                         @keyframes homePage_circle {
                             0% {
                                 @include keyframes_rotate;
                             }
                             100% {
-                                @include keyframes_rotate($myRotate: rotate(360deg));
+                              @include keyframes_rotate($myRotate: rotate(360deg))
                             }
                         }
                     }
                 }
-
-                &.home_server_content_animation2 {
+                
+                .home_server_content_animation2 {
                     @include keyframes_rotate;
-                    @include animationArgument($name: homePage_circle_2);
+                    @include animationArgument($name: homePage_circle_2, $time:7s,$infinite:infinite);
+                    // @include animation_keep;
                     @at-root {
                         @keyframes homePage_circle_2 {
-                            0% {
+                             0% {
                                 @include keyframes_rotate;
                             }
                             100% {
-                                @include keyframes_rotate($myRotate: rotate(360deg));
+                              @include keyframes_rotate($myRotate: rotate(360deg))
                             }
                         }
                     }
                 }
 
-                &.home_server_content_animation3 {
-                    @include keyframes_rotate;
-                    @include animationArgument($name: homePage_circle_3);
-                    @at-root {
+                .home_server_content_animation3_line {
+                    @include keyframes_rotate; 
+                    @include animationArgument($name: homePage_circle_3, $time:6s,$infinite:infinite);
+                    //@include animation_keep;
+                    @at-root { 
                         @keyframes homePage_circle_3 {
-                            0% {
+                             0% {
                                 @include keyframes_rotate;
                             }
                             100% {
-                                @include keyframes_rotate($myRotate: rotate(360deg));
+                              @include keyframes_rotate($myRotate: rotate(360deg))
+                            }
+                        }
+                    }
+                }
+                .circlePillar{
+                    @include keyframes_rotate; 
+                    @include animationArgument($name: homePage_circle_4, $time:6s,$infinite:infinite);
+                    //@include animation_keep;
+                    @at-root { 
+                        @keyframes homePage_circle_4 {
+                             0% {
+                                @include keyframes_rotate;
+                            }
+                            100% {
+                              @include keyframes_rotate($myRotate: rotate(360deg))
                             }
                         }
                     }
@@ -500,8 +508,8 @@
             }
             span {
                 display: inline-block;
-                margin-left: 57%;
-                margin-top: 3%;
+                margin-left: 55%;
+                margin-top: 7%;
                 h2,
                 p {
                     color: #eef4ff;
@@ -520,6 +528,8 @@
                     background-color: #0e3a63;
                     color: #a4b5c5;
                     padding: 7px;
+                    margin: 5px 0;
+                    width: 200px;
                 }
                 a {
                     font-size: 16px;
@@ -528,6 +538,7 @@
                     text-align: center;
                     color: #eef4ff;
                     padding: 5px;
+                    width: 200px;
                 }
             }
         }
@@ -538,6 +549,7 @@
     width: 1200px;
     margin: 0 auto;
     font-size: 0;
+    margin-bottom: 50px;
     >div {
         display: inline-block;
         width: 18%;
@@ -567,6 +579,9 @@
                         display: block;
                     }
                 }
+                >p{
+                    color: #FFF; 
+                }
             }
             .homePage_advantage_active_content {
                 .homePage_advantage_active_content_img {
@@ -581,13 +596,14 @@
             height: 280px;
             background-color: #f6f6f6;
             display: block;
-            padding: 20px;
+            padding: 40px 20px;
             margin: 0 auto;
-            font-size: 14px;
+            font-size: 12px;
             p {
                 text-align: left;
                 width: 180px;
                 margin: 10px auto;
+                color: #666;
             }
             h4 {
                 text-align: center;
@@ -633,18 +649,23 @@
     }
 }
 
-@mixin img_p($i_w:0px, $i_m_b:0px, $_c:#fff, $f_s:12px) {
+@mixin img_p($i_w:0px, $p_top:105px, $_c:#fff, $f_s:12px) {
     >img {
         width: 60px;
-        margin-bottom: $i_m_b;
     }
     p {
         color: #01e5e7;
         font-size: 12px;
+        position: absolute;
+        top: $p_top; 
+        width: 400px; 
+        left: 50%; 
+        margin-left: -200px; 
     }
 }
 
 .client_case {
+    overflow: hidden; 
     background-color: #0a162c;
     color: #fff;
     .client_case_content {
@@ -663,47 +684,44 @@
             span {
                 text-align: center;
                 cursor: pointer;
+                display: inline-block;
+                width: 60px;  
                 >img {
-                    -webkit-transition: -webkit-transform 2s;
-                    -moz-transition: -moz-transform 2s;
-                    -ms-transition: -ms-transform 2s;
-                    -o-transition: -o-transform 2s;
-                    transition: transform 2s;
+                    -webkit-transition: all 0.8s;
+                    -moz-transition: all 0.8s;
+                    -ms-transition: all 0.8s;
+                    -o-transition: all 0.8s;
+                    transition: all 0.8s;
                 }
                 &:hover {
-                   /*  img {
-                        -webkit-transform: rotate(360deg);
-                        -moz-transform: rotate(360deg);
-                        -ms-transform: rotate(360deg);
-                        -o-transform: rotate(360deg);
-                        transform: rotate(360deg);
-                    } */
-                    p{
-                        font-size: 18px; 
+                     img { 
+                       width:74px !important; 
+                       margin-left: -7px; 
                     }
+                    
                 }
             }
             &:nth-child(1) {
                 span {
                     &:nth-child(2) {
-                        @include position_a($l: -53px, $t:-55px);
-                        @include img_p($i_m_b: 40px);
+                        @include position_a($l: -21px, $t:-58px);
+                        @include img_p($p_top:115px);
                     }
                     &:nth-child(3) {
-                        @include position_a($l: 205px, $t:63px);
-                        @include img_p($i_m_b: 40px);
+                        @include position_a($l: 227px, $t:43px);
+                        @include img_p($p_top:100px);
                     }
                     &:nth-child(4) {
-                        @include position_a($l: 556px, $t:-103px);
-                        @include img_p($i_m_b: 40px);
+                        @include position_a($l: 557px, $t:-110px);
+                        @include img_p($p_top:144px);
                     }
                     &:nth-child(5) {
-                        @include position_a($l: 873px, $t:70px);
-                        @include img_p($i_m_b: 40px);
+                        @include position_a($l: 874px, $t:57px);
+                        @include img_p($p_top:85px);
                     }
                     &:nth-child(6) {
                         @include position_a($l: 1161px, $t:-67px);
-                        @include img_p($i_m_b: 40px);
+                        @include img_p;
                     }
                 }
             }
@@ -711,25 +729,25 @@
             &:nth-child(2) {
                 span {
                     &:nth-child(2) {
-                        @include position_a($l: -27px, $t:-30px);
-                        @include img_p($i_m_b: 40px);
+                        @include position_a($l: -22px, $t:-40px);
+                        @include img_p($p_top:90px);
                     }
                     &:nth-child(3) {
-                        @include position_a($l: 226px, $t:48px);
-                        @include img_p($i_m_b: 40px);
+                        @include position_a($l: 226px, $t:38px);
+                        @include img_p;
                     }
                     &:nth-child(4) {
-                        @include position_a($l: 534px, $t:-83px);
-                        @include img_p($i_m_b: 40px);
+                        @include position_a($l: 558px, $t:-90px);
+                        @include img_p($p_top:130px);
                     }
                     &:nth-child(5) {
-                        @include position_a($l: 778px, $t:31px);
-                        @include img_p($i_m_b: 40px);
+                        @include position_a($l: 875px, $t:23px);
+                        @include img_p($p_top:115px);
                     }
-                    &:nth-child(6) {
-                        @include position_a($l: 1150px, $t:-67px);
-                        @include img_p($i_m_b: 40px);
-                    }
+                   /*  &:nth-child(6) {
+                      //  @include position_a($l: 1150px, $t:-67px);
+                        //@include img_p;
+                    } */
                 }
             }
         }
@@ -772,7 +790,11 @@
         p,
         img {
             @include aboutMe_content_img;
+            a{
+                color: #333; 
+            }
         }
+
         img {
             display: block;
         }
@@ -788,36 +810,41 @@
 }
 
 
-.homePage_product_video{
+.homePage_product_video {
     background-color: #38bdbe;
+    margin-bottom: 70px;
     padding: 20px 50px 20px 400px;
     position: relative;
-    .homePage_product_video_div{
+    .homePage_product_video_div {
         position: absolute;
-        left: 100px; 
-        top: 130px; 
-        h2{
-            color: #FFF; 
-            margin-bottom: 20px; 
+        left: 100px;
+        top: 130px;
+        h2 {
+            color: #FFF;
+            margin-bottom: 20px;
         }
-        button{
+        /*  button {
             background-color: #38bdbe;
             border: 1px solid #fff;
             color: #fff;
-            -webkit-border-radius: 10px; 
-               border-radius: 10px;    
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+        } */
+        p {
+            color: #FFF;
         }
-        img{
-            width: 20px; 
+        img {
+            width: 20px;
         }
-    }  
-    
+    }
 }
+
 #homePage_video {
     width: 700px;
 }
 
-.slideBox_two,.slideBox_three {
+.slideBox_two,
+.slideBox_three {
     >div {
         display: inline-block;
         width: 50%;
@@ -826,14 +853,17 @@
         vertical-align: middle;
     }
 }
-.slideBox_three{
-    padding-top: 60px; 
+
+.slideBox_three {
+    padding-top: 60px;
 }
+
 .slideBox_two_left {
     >h1 {
-        padding-top: 150px;
+        padding-top: 110px;
         text-align: center;
         color: #FFF;
+        font-weight: 400;
         img {
             width: 45px;
             margin-right: 20px;
@@ -876,20 +906,18 @@
     img:nth-child(1) {
         @include position_a($l: 29px, $t:282px);
         width: 450px;
-       
-        @include animationArgument($name: slideBoxTwo_two);
-        @include keyframes_translate($translate:translate(0px,60px));
+        @include animationArgument($name: slideBoxTwo_one,$infinite:1);
+        @include keyframes_translate($translate: translate(0px, 60px));
         @include animation_keep;
         @at-root {
-            @keyframes slideBoxTwo_two {
+            @keyframes slideBoxTwo_one {
                 0% {
-                   @include keyframes_translate($translate:translate(0px,60px));
-                   opacity: 0;  
+                    @include keyframes_translate($translate: translate(0px, 60px));
+                    opacity: 0;
                 }
-               
                 100% {
-                   @include keyframes_translate($translate:translate(0px,0px));
-                   opacity: 1; 
+                    @include keyframes_translate($translate: translate(0px, 0px));
+                    opacity: 1;
                 }
             }
         }
@@ -897,114 +925,122 @@
     img:nth-child(2) {
         @include position_a($l: 15px, $t:320px);
         width: 470px;
+        @include keyframes_translate($translate: translate(0px, 60px));
+        @include animationArgument($name: slideBoxTwo_two,$infinite:1);
+        @include animation_keep;
+        @at-root {
+            @keyframes slideBoxTwo_two {
+                0% {
+                    @include keyframes_translate($translate: translate(0px, 60px));
+                    opacity: 0;
+                }
+                100% {
+                    @include keyframes_translate($translate: translate(0px, 0px));
+                    opacity: 1;
+                }
+            }
+        }
     }
     img:nth-child(3) {
         @include position_a($l: 90px, $t:100px);
         width: 320px;
-        //@include animationArgument($name: slideBoxTwo_bg, $time:5s);
-        /* @at-root { 
-            @keyframes slideBoxTwo_bg {
+        opacity: 0;
+        @include animationArgument($name: slideBoxTwo_three, $time:1.5s,$infinite:1);
+        @include animation_keep;
+        @at-root {
+            @keyframes slideBoxTwo_three {
                 0% {
-                   opacity: 0;  
-                }
-                50%{
-                    opacity: 1 
+                    opacity: 0;
                 }
                 100% {
-                   opacity: 0; 
+                    opacity: 1;
                 }
             }
-        } */ 
+        }
     }
     img:nth-child(4) {
         @include position_a($l: 192px, $t:75px);
         width: 140px;
-       //@include animationArgument($name: slideBoxTwo_bg, $time:5s);
-       /*  @at-root {
-            @keyframes slideBoxTwo_bg {
-                0% {
-                   opacity: 0;  
-                }
-                60%{
-                    opacity: 1 
-                }
-                100% {
-                   opacity: 0; 
-                }
-            }
-        } */
+        opacity: 0;
+        @include animationArgument($name: slideBoxTwo_three, $time:2s,$infinite:1);
+        @include animation_keep;
     }
     img:nth-child(5) {
         @include position_a($l: 199px, $t:216px);
         width: 100px;
-        //@include animationArgument($name: slideBoxTwo_fifth, $time:5s);
-        /* @at-root {
-            @keyframes slideBoxTwo_fifth {
-                0% {
-                   opacity: 1 
-                }
-                50%{
-                    opacity: 0;
-                }
-                100% {
-                   opacity: 1; 
-                }
-            }
-        } */
+        opacity: 0;
+        @include animationArgument($name: slideBoxTwo_three, $time:2s,$infinite:1);
+        @include animation_keep;
     }
     img:nth-child(6) {
         @include position_a($l: 346px, $t:169px);
         width: 80px;
-        // @include animationArgument($name: slideBoxTwo_six, $time:5s);
-       /*  @at-root {
-            @keyframes slideBoxTwo_six {
-                0% {
-                   opacity: 0.5 
-                }
-                50%{
-                    opacity: 1;
-                }
-                100% {
-                   opacity: 0.5; 
+        opacity: 0;
+        @include animationArgument($name: slideBoxTwo_three, $time:2s,$infinite:1);
+        @include animation_keep;
+    }
+}
+
+.slideBox_three_right {
+    position: relative;
+    >img {
+        &:nth-child(1) {
+            @include position_a($l: 15px, $t:60px);
+            @include keyframes_translate($translate: translate(0px, 60px));
+            width: 470px;
+            opacity: 0;
+            @include animationArgument($name: slideBoxTwo_three_one,$infinite:1);
+            @include animation_keep;
+            @at-root {
+                @keyframes slideBoxTwo_three_one {
+                    0% {
+                        @include keyframes_translate($translate: translate(0px, 60px));
+                        opacity: 0;
+                    }
+                    100% {
+                        @include keyframes_translate($translate: translate(0px, 0px));
+                        opacity: 1;
+                    }
                 }
             }
-        } */
-    }
-}
-
-.slideBox_three_right{
-    position: relative;
-    >img{
-        &:nth-child(1){
-            @include position_a($l:15px, $t:60px);
-            width: 470px;
         }
-        &:nth-child(2){
-            @include position_a($l:160px, $t:124px);
-             width: 180px;
+        &:nth-child(2) {
+            @include position_a($l: 160px, $t:124px);
+            @include keyframes_translate($translate: translate(0px, 60px));
+            width: 180px;
+            @include animationArgument($name: slideBoxTwo_three_one,$infinite:1);
             @include keyframes_rotate;
-            //@include animationArgument($name: slideBox_right_three, $time:5s);
-           /*  @at-root { 
-                @keyframes slideBox_right_three{
-                    0%{
-                        @include keyframes_rotate;
-                    }
-                    100%{
-                        @include keyframes_rotate($myRotate:rotate(360deg));
-                    }
-                }
-            } */
         }
     }
 }
 
-.first_screen{
+.first_screen {
     position: relative;
-    >img{
+    >img {
         position: absolute;
         bottom: -160px;
         left: 0;
-        width: 100%; 
-        //z-index: 99;   
+        width: 100%; //z-index: 99;   
+    }
+}
+
+#slideBox_one_content_h4 {
+    >img {
+        position: static;
+        top: 0;
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+#client{
+    a{
+        color: #FFF; 
+    }
+}
+
+#ourselves,#advantage{
+    a{
+        color: #000; 
     }
 }

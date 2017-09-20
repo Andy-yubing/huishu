@@ -17,6 +17,7 @@ ul {
 .w {
     width: 1200px;
     margin: 0 auto;
+    overflow: hidden; 
 }
 
 @mixin after_before($con:"", $w:0, $h:0, $p:static, $l:0, $t:0, $b:#fff) {
@@ -46,15 +47,24 @@ $falseElement:(content: "", position: absolute);
     background-color: #00cbff;
 }
 
+.content {
+    padding-top: 52px;
+    background-color: #fafafa;
+    padding-bottom: 60px; 
+}
+
 #header {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
     background-color: $TOPColor;
     .navbar {
         margin-bottom: 0;
     }
     .header_img {
-        padding: 10px;
+        padding: 5px;
         img {
-            width: 110px;
+            width: 135px;
         }
     }
     .nav {
@@ -93,16 +103,19 @@ $falseElement:(content: "", position: absolute);
         position: relative;
         >div {
             position: relative;
-            padding-left: 150px;
-            padding-top: 33px;
+            //padding-left: 150px;
+            padding-top: 95px;
             img {
                 position: absolute;
                 left: 0;
-                top: 70px;
+                top: 30px;
             }
             span {
                 p {
                     @include font_style($color: #646667);
+                    i{
+                        margin: 0 10px; 
+                    }
                 }
             }
         }
@@ -174,12 +187,7 @@ $falseElement:(content: "", position: absolute);
 .warp {
     flex-wrap: wrap;
 }
-#header {
-    position: absolute;
-    z-index: 99;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-}
+
 
 .main_top {
     background-color: #11243d; 
@@ -190,7 +198,7 @@ $falseElement:(content: "", position: absolute);
     >span{
         display: inline-block;
         width: 50%;
-        color: #ffd800; 
+        color: #fff; 
         >h1{
             margin-top: 200px; 
         }

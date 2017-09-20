@@ -1,9 +1,9 @@
-#header {
-  position: absolute;
-  z-index: 99;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.5); }
-
+/* #header {
+    position: absolute;
+    z-index: 99;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .5);
+} */
 /* .main_top {
     //@include bgu($url: url('../images/case-top.jpg') no-repeat);
     background-color: #11243d; 

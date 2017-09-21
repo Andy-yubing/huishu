@@ -17,7 +17,7 @@ ul {
 .w {
     width: 1200px;
     margin: 0 auto;
-    overflow: hidden; 
+    overflow: hidden;
 }
 
 @mixin after_before($con:"", $w:0, $h:0, $p:static, $l:0, $t:0, $b:#fff) {
@@ -50,7 +50,7 @@ $falseElement:(content: "", position: absolute);
 .content {
     padding-top: 52px;
     background-color: #fafafa;
-    padding-bottom: 60px; 
+    padding-bottom: 60px;
 }
 
 #header {
@@ -102,8 +102,7 @@ $falseElement:(content: "", position: absolute);
         margin: 0 auto;
         position: relative;
         >div {
-            position: relative;
-            //padding-left: 150px;
+            position: relative; //padding-left: 150px;
             padding-top: 95px;
             img {
                 position: absolute;
@@ -113,8 +112,8 @@ $falseElement:(content: "", position: absolute);
             span {
                 p {
                     @include font_style($color: #646667);
-                    i{
-                        margin: 0 10px; 
+                    i {
+                        margin: 0 10px;
                     }
                 }
             }
@@ -164,7 +163,7 @@ $falseElement:(content: "", position: absolute);
     background-color: #fff;
     -webkit-display: flex;
     justify-content: space-between;
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
     li {
         width: 30%;
         height: 250px;
@@ -178,32 +177,36 @@ $falseElement:(content: "", position: absolute);
         }
     }
 }
+
 .carServer_h3 {
     margin: 100px;
 }
-.bcg{
-    background-color: #FAFAFA; 
+
+.bcg {
+    background-color: #FAFAFA;
 }
+
 .warp {
     flex-wrap: wrap;
 }
 
 
 .main_top {
-    background-color: #11243d; 
+    background-color: #11243d;
     height: 520px;
 }
-.main_top_content{
-    font-size: 0; 
-    >span{
+
+.main_top_content {
+    font-size: 0;
+    >span {
         display: inline-block;
         width: 50%;
-        color: #fff; 
-        >h1{
-            margin-top: 200px; 
+        color: #fff;
+        >h1 {
+            margin-top: 200px;
         }
-        img{
-            width: 490px; 
+        img {
+            width: 490px;
         }
     }
 }

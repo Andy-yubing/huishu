@@ -5,36 +5,10 @@
     background-size: 100% 100%;
 }
 
-/* #header {
-    position: absolute;
-    z-index: 99;
-    width: 100%;
-    background-color: rgba(0, 0, 0, .5);
-} */
-
-/* .main_top {
-    //@include bgu($url: url('../images/case-top.jpg') no-repeat);
-    background-color: #11243d; 
-    height: 520px;
-} */
-
 .car_Server {
     background-color: #fafafa;
 }
-/* .main_top_content{
-    font-size: 0; 
-    >span{
-        display: inline-block;
-        width: 50%;
-        color: #ffd800; 
-        >h1{
-            margin-top: 200px; 
-        }
-        img{
-            width: 490px; 
-        }
-    }
-} */
+
 @mixin p_r($p: absolute,
 $t:0,
 $l:0,
@@ -56,39 +30,43 @@ $r:rotate(0deg)) {
     -o-transform: $r;
     transform: $r;
 }
-
-
+@mixin animation($name:name,$time:time,$speed:speed,$num:num){
+     -webkit-animation: $name $time $speed $num;
+     -moz-animation: $name $time $speed $num;
+     -o-animation: $name $time $speed $num;
+     animation: $name $time $speed $num;
+}
 .carServer {
     >ul,
     >div {
         margin-bottom: 30px;
     }
-
     .carServer_user {
         position: relative;
-
         padding: 200px;
-
         background-color: #fff;
+        &:hover{
+            >img{
+                &:first-child{
+                    @include rotate;
+                     @include animation($name:carServer_user_rotate,$time:6s,$speed:linear,$num:infinite);
+                     @at-root {
+                        @keyframes carServer_user_rotate {
+                            0% {
+                                @include rotate;
+                            }
+                            100% { 
+                                @include rotate($r: rotate(360deg));
+                            }
+                        }
+                    } 
+                }
+            }
+        }
         >img {
             &:first-child {
                 display: block;
-                @include rotate;
-                -webkit-animation: carServer_user_rotate 6s linear infinite;
-                -moz-animation: carServer_user_rotate 6s linear infinite;
-                -o-animation: carServer_user_rotate 6s linear infinite;
-                animation: carServer_user_rotate 6s linear infinite;
                 margin: 0 auto;
-                @at-root {
-                    @keyframes carServer_user_rotate {
-                        0% {
-                            @include rotate;
-                        }
-                        100% {
-                            @include rotate($r: rotate(360deg));
-                        }
-                    }
-                }
             }
             &:nth-child(2) {
                 position: absolute;
@@ -101,6 +79,7 @@ $r:rotate(0deg)) {
                 margin-left: -21px;
             }
         }
+
         >span {
             ul {
                 &.carServer_user_left {
@@ -186,18 +165,17 @@ $r:rotate(0deg)) {
     .carServer_360 {
         padding: 80px;
         text-align: center;
-        @include rotate;
-        -webkit-animation: carServer_360_rotate 18s linear infinite;
-        -moz-animation: carServer_360_rotate 18s linear infinite;
-        -o-animation: carServer_360_rotate 18s linear infinite;
-        animation: carServer_360_rotate 18s linear infinite;
-        @at-root {
-            @keyframes carServer_360_rotate {
-                0% {
-                    @include rotate;
-                }
-                100% {
-                    @include rotate($r: rotate(360deg));
+        &:hover{
+            @include rotate;
+            @include animation($name:carServer_360_rotate,$time:18s,$speed:linear,$num:infinite);
+            @at-root {
+                @keyframes carServer_360_rotate {
+                    0% {
+                        @include rotate;
+                    }
+                    100% {
+                        @include rotate($r: rotate(360deg));
+                    }
                 }
             }
         }
